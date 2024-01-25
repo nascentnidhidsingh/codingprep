@@ -25,7 +25,9 @@
 //Output: 3
 //Explanation: III = 3.
 
-class Solution {
+import java.util.HashMap;
+
+class RomanToInteger {
     public int romanToInt(String s) {
 
 //Time Complexity-O(N)

@@ -7,7 +7,9 @@
 //Input: nums = [1,2,3,1], k = 3
 //Output: true
 
-class Solution {
+import java.util.HashMap;
+
+class ContainsNearbyDuplicate {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         //Time Complexity - O(n)
         //Space Complexity - O(n)

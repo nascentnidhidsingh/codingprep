@@ -7,7 +7,10 @@
 //Input: nums = [1,2,3,1]
 //Output: true
 
-class Solution {
+import java.util.HashSet;
+import java.util.Set;
+
+class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
         //Time Complexity - O(n)
         //Space Complexity - O(n)

@@ -11,7 +11,7 @@
 //Explanation: Your function should return k = 2, with the first two elements of nums being 2.
 //It does not matter what you leave beyond the returned k (hence they are underscores).
 
-class Solution {
+class RemoveElement {
     public int removeElement(int[] nums, int val) {
         //Space Complexity - O(1)
         //Time Complexity - O(N)

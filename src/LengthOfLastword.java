@@ -12,7 +12,7 @@
 //Output: 5
 //Explanation: The last word is "World" with length 5.
 
-class Solution {
+class LengthOfLastWord {
     public int lengthOfLastWord(String s) {
         //Space complexity - O(n)
         //Time Complexity - O(1)

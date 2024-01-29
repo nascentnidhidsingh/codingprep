@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class LongestSubarrayOfKDistinctCharacters {
+public class LongestSubstringOfKDistinctCharacters {
     public static void main(String[] args) {
         String str = "aabacbebebe";
         int distinctCharacters = 3;

@@ -28,6 +28,9 @@ class Node {
 
     }
 
+    public Node() {
+    }
+
     public static void printNodeData(Node head) {
         Node current = head;
         while (current != null) {

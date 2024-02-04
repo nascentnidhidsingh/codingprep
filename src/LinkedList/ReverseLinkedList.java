@@ -1,14 +1,14 @@
 package LinkedList;
 
 public class ReverseLinkedList {
-    public Node reverseList(Node head) {
+    public static ListNode reverseList(ListNode head) {
 
-        Node current = head;
-        Node prev = null;
-        Node next = null;
+        ListNode current = head;
+        ListNode prev = null;
+        ListNode next;
 
-        if (head == null)
-            return null;
+        if (head == null || head.next == null)
+            return head;
 
         while (current != null) {
             next = current.next;

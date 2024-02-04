@@ -8,10 +8,41 @@ package LinkedList;//Given head, the head of a linked list, determine if the lin
 //Output: true
 //Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
 
-import LinkedList.ListNode;
-
 public class HasCycle {
-    public boolean hasCycle(ListNode head) {
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode e = new ListNode(6);
+        ListNode d = new ListNode(5, e);
+        ListNode c = new ListNode(4, d);
+        ListNode b = new ListNode(3, c);
+        ListNode a = new ListNode(2, b);
+        e.next = d;
+        head.next = a;
+        System.out.println("The LinkedList has Cycle : " + hasCycle(head));
+        System.out.println("Length of the Cycle : " + lengthOfCycle(head));
+        System.out.println("Starting point of the Cycle : " + startingpointOfCycle(head).val);
+    }
+
+    private static ListNode startingpointOfCycle(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)
+                break;
+        }
+        fast = head;
+        while (fast != slow) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+
+    public static boolean hasCycle(ListNode head) {
 
         if (head == null || head.next == null)
             return false;
@@ -26,5 +57,26 @@ public class HasCycle {
                 return true;
         }
         return false;
+    }
+
+    public static int lengthOfCycle(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)
+                break;
+        }
+
+        fast = head;
+        int count = 0;
+
+        while (fast != slow) {
+            fast = fast.next;
+            count++;
+        }
+        return count;
     }
 }

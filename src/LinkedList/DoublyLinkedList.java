@@ -6,7 +6,7 @@ class DoublyLinkedList {
     DoublyLinkedList prev;
 
 
-    private DoublyLinkedList(int val, DoublyLinkedList next, DoublyLinkedList prev) {
+    public DoublyLinkedList(int val, DoublyLinkedList next, DoublyLinkedList prev) {
         this.data = val;
         this.next = next;
         this.prev = prev;
@@ -37,7 +37,7 @@ class DoublyLinkedList {
 
     }
 
-    private static DoublyLinkedList arrayToDLL(int[] ar) {
+    public static DoublyLinkedList arrayToDLL(int[] ar) {
 
         if (ar == null || ar.length == 0)
             return null;

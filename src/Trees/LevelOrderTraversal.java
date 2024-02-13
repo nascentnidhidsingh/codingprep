@@ -1,6 +1,7 @@
 package Trees;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -18,8 +19,9 @@ public class LevelOrderTraversal {
     }
 
     private static List<List<Integer>> levelOrder(TreeNode root) {
-        if (root == null)
-            return null;
+        if (root == null) {
+            return Collections.emptyList();
+        }
 
         List<List<Integer>> res = new ArrayList<>();
         Queue<TreeNode> q = new LinkedList<>();

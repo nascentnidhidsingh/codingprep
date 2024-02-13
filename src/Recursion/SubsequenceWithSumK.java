@@ -42,11 +42,11 @@ public class SubsequenceWithSumK {
         }
         list.add(ar[i]);
         currentSum = currentSum + ar[i];
-        if (firstSubsequence(i + 1, list, ar, sum, currentSum) == true)
+        if (firstSubsequence(i + 1, list, ar, sum, currentSum))
             return true;
         int x = list.removeLast();
         currentSum = currentSum - x;
-        return firstSubsequence(i + 1, list, ar, sum, currentSum) == true;
+        return firstSubsequence(i + 1, list, ar, sum, currentSum);
     }
 
     private static int countSubsequence(int i, int[] ar, int sum, int currentSum) {

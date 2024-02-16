@@ -24,21 +24,22 @@ public class LevelOrderTraversal {
         }
 
         List<List<Integer>> res = new ArrayList<>();
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
 
-        while (!q.isEmpty()) {
-            int size = q.size();
+        while (!queue.isEmpty()) {
+            int size = queue.size();
             List<Integer> currentLevel = new ArrayList<>();
+
             for (int i = 0; i < size; i++) {
-                TreeNode current = q.remove();
+                TreeNode current = queue.remove();
                 currentLevel.add(current.data);
                 if (current.left != null)
-                    q.add(current.left);
+                    queue.add(current.left);
                 if (current.right != null)
-                    q.add(current.right);
+                    queue.add(current.right);
             }
-        res.add(currentLevel);
+            res.add(currentLevel);
         }
         return res;
     }

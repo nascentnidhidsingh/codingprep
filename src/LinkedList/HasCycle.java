@@ -17,7 +17,7 @@ public class HasCycle {
         ListNode c = new ListNode(4, d);
         ListNode b = new ListNode(3, c);
         ListNode a = new ListNode(2, b);
-        e.next = d;
+        e.next = c;
         head.next = a;
         System.out.println("The LinkedList has Cycle : " + hasCycle(head));
         System.out.println("Length of the Cycle : " + lengthOfCycle(head));
@@ -70,12 +70,12 @@ public class HasCycle {
                 break;
         }
 
-        fast = head;
-        int count = 0;
+        fast = fast.next;
+        int count = 1;
 
         while (fast != slow) {
-            fast = fast.next;
             count++;
+            fast = fast.next;
         }
         return count;
     }

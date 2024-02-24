@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package Recursion;
 
 //Input: S1 = “AGGTAB”, S2 = “AGGTAB”
 //Output: 4

@@ -11,8 +11,7 @@ public class ReverseArray {
     }
 
     private static void getPrintArray(int[] ar) {
-        for (int i = 0; i < ar.length; i++)
-            System.out.println(ar[i]);
+        for (int j : ar) System.out.println(j);
     }
 
     private static int[] reverseRecursion(int[] ar, int start, int end) {
@@ -24,3 +23,5 @@ public class ReverseArray {
         return reverseRecursion(ar, start + 1, end - 1);
     }
 }
+
+

@@ -1,5 +1,4 @@
 package DynamicProgramming;
-
 public class PrintLCSTopDown {
     public static void main(String[] args) {
         String str1 = "AGGUYT";
@@ -9,7 +8,6 @@ public class PrintLCSTopDown {
         int[][] dp = new int[str1.length() + 1][str2.length() + 1];
         System.out.println(printLCS(c1, c2, str1.length(), str2.length(), dp));
     }
-
     private static StringBuilder printLCS(char[] str1, char[] str2, int m, int n, int[][] dp) {
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {

@@ -25,8 +25,8 @@ public class CountIslandsBFSDFS {
     }
 
     private static void bfs(int[][] grid, int row, int col) {
-        Queue<Pair> q = new LinkedList<>();
-        q.add(new Pair(row, col));
+        Queue<PairData> q = new LinkedList<>();
+        q.add(new PairData(row, col));
         while (!q.isEmpty()) {
             row = q.peek().row;
             col = q.peek().col;
@@ -36,7 +36,7 @@ public class CountIslandsBFSDFS {
                     int newRow = row + i;
                     int newCol = col + j;
                     if (newRow >= 0 && newRow < grid.length && newCol >= 0 && newCol < grid[0].length && grid[newRow][newCol] == 1) {
-                        q.add(new Pair(newRow, newCol));
+                        q.add(new PairData(newRow, newCol));
                         grid[newRow][newCol] = 2;
                     }
                 }
@@ -53,17 +53,5 @@ public class CountIslandsBFSDFS {
         dfs(grid, row - 1, col);
         dfs(grid, row, col + 1);
         dfs(grid, row, col - 1);
-    }
-}
-
-class Pair {
-
-    int row;
-    int col;
-
-    Pair(int row, int col) {
-        this.row = row;
-        this.col = col;
-
     }
 }

@@ -2,7 +2,7 @@ package Graph;
 
 import java.util.*;
 
-public class BipartiteGraph {
+public class BipartiteGraphBFSDFS {
     public static void main(String[] args) {
         List<List<Integer>> adj = new ArrayList<>();
         int V = 8;
@@ -15,7 +15,6 @@ public class BipartiteGraph {
            3--6
 
          */
-        adj.get(0).add(1);
 
         adj.get(1).add(0);
         adj.get(1).add(2);
@@ -36,13 +35,15 @@ public class BipartiteGraph {
         adj.get(6).add(2);
         adj.get(6).add(3);
 
-        System.out.println(isBartite(V, adj));
+        System.out.println(isBarpatiteDFS(V, adj));
+
+        System.out.println(isBartiteBFS(V, adj));
     }
 
-    private static boolean isBartite(int V, List<List<Integer>> adj) {
+    private static boolean isBartiteBFS(int V, List<List<Integer>> adj) {
         int[] color = new int[V + 1];
         Arrays.fill(color, -1);
-        for (int i = 0; i <= V; i++) {
+        for (int i = 1; i <= V; i++) {
             if ((bipartiteBFS(i, adj, color))) {
                 return true;
             }
@@ -67,6 +68,34 @@ public class BipartiteGraph {
             }
         }
         return true;
+    }
+
+    //DFS
+    private static boolean isBarpatiteDFS(int v, List<List<Integer>> adj) {
+        int[] color = new int[v + 1];
+        Arrays.fill(color, -1);
+        for (int i = 1; i <= v; i++) {
+            if (color[i] == -1) {
+                if (barpatiteDFS(i, 0, adj, color)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private static boolean barpatiteDFS(int source, int souceColor, List<List<Integer>> adj, int[] color) {
+        color[source] = souceColor;
+        for (int i : adj.get(source)) {
+            if (color[i] == -1) {
+                if (barpatiteDFS(i, 1 - souceColor, adj, color)) {
+                    return true;
+                }
+            } else if (color[i] == souceColor) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

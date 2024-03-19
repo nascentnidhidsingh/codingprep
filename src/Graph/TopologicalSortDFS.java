@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class TopologicalSort {
+public class TopologicalSortDFS {
     public static void main(String[] args) {
         List<List<Integer>> adj = new ArrayList<>();
         int V = 6;

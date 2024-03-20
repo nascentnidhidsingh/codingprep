@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-public class ShortestPathInDirectedAcyclicGraph {
+public class ShortestPathInWeightedDirectedAcyclicGraph {
     public static void main(String[] args) {
         int n = 6, m = 7;
         int[][] edge = {{0,1,2},{0,4,1},{4,5,4},{4,2,2},{1,2,3},{2,3,6},{5,3,1}};
-        ShortestPathInDirectedAcyclicGraph obj = new ShortestPathInDirectedAcyclicGraph();
+        ShortestPathInWeightedDirectedAcyclicGraph obj = new ShortestPathInWeightedDirectedAcyclicGraph();
         int[] res = obj.shortestPath(n, m, edge);
         for (int i = 0; i < n; i++) {
             System.out.print(res[i] + " ");

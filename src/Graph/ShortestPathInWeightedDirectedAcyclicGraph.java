@@ -71,8 +71,16 @@ public class ShortestPathInWeightedDirectedAcyclicGraph {
 class Pairs {
     int first;
     int second;
+    String startword;
+
+    int steps;
     Pairs(int first, int second) {
         this.first = first;
         this.second = second;
+    }
+
+    public Pairs(String startWord, int steps) {
+        this.startword = startWord;
+        this.steps = steps;
     }
 }

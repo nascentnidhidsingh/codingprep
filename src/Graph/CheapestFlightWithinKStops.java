@@ -53,7 +53,7 @@ public class CheapestFlightWithinKStops {
             int node = q.peek().second;
             int cost = q.peek().third;
             q.remove();
-            if (stops > k) continue;
+            if (stops > k) break;
             for (Pair i : adj.get(node)) {
                 int adjNode = i.row;
                 int eW = i.col;

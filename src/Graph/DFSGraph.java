@@ -42,7 +42,6 @@ public class DFSGraph {
     private static List<Integer> dfsTraversal(List<List<Integer>> adj, int v) {
         boolean[] vis = new boolean[v + 1];
         List<Integer> list = new ArrayList<>();
-        vis[1] = true;
         dfs(1, vis, adj, list);
         return list;
     }

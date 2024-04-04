@@ -1,4 +1,4 @@
-package CodingPrep;
+package Array;
 
 import java.util.HashMap;
 
